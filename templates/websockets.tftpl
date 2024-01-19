@@ -1,0 +1,9 @@
+%{ for addr, port in ip_addrs ~}
+backend ${addr}:${port}
+%{ endfor ~}
+
+
+%{ for config_key, config_value in config }
+set ${config_key} = ${config_value}
+%{ endfor ~}
+
